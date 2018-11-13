@@ -43,16 +43,23 @@ gulp.task("sass", () => {
 });
 
 //pugをhtmlに変換
-gulp.task("pug", () => {
-  var option = {
-    pretty: true
-  }
-  gulp.src("./dev/pug/**/*.pug")
-    .pipe(plumber({
-      errorHandler: notify.onError("Error: <%= error.message %>")
-    }))
-    .pipe(pug(option))
-    .pipe(gulp.dest("./master/"))
+ //gulp.task("pug", () => {
+  //var option = {
+    //pretty: true
+  //}
+  //gulp.src(["./dev/pug/**/*.pug", "!./dev/pug/**/_*.pug"])
+    //.pipe(plumber({
+      //errorHandler: notify.onError("Error: <%= error.message %>")
+    //}))
+    //.pipe(pug(option))
+    //.pipe(gulp.dest("./master/"))
+//});
+
+gulp.task("pug", function() {
+  return gulp.src(["./dev/pug/**/*.pug", "!./dev/pug/**/_*.pug"])
+    .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
+    .pipe(pug({pretty: true}))
+    .pipe(gulp.dest("./master/"));
 });
 
 //ブラウザリロード処理

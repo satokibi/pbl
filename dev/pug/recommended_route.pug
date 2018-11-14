@@ -1,0 +1,50 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "recommended_route"
+  - var page = pages[key]
+
+block contents
+  .container.
+    <h2 class="my-3">おすすめルート一覧</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>おすすめルート名</th>
+          <th>説明</th>
+          <th><!-- button --></th>
+        </tr>
+      </thead>
+      <tbody class="items">
+        <tr>
+          <td>route 1</td>
+          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
+          <td> <div class="text-center mx-0">
+              <a href="#" class="btn bg-secondary text-light">詳細</a>
+            </div> </td>
+        </tr>
+        <tr>
+          <td>route 2</td>
+          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
+          <td> <div class="text-center mx-0">
+              <a href="#" class="btn bg-secondary text-light">詳細</a>
+            </div> </td>
+        </tr>
+        <tr>
+          <td>route 3</td>
+          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
+          <td> <div class="text-center mx-0">
+              <a href="#" class="btn bg-secondary text-light">詳細</a>
+            </div> </td>
+        </tr>
+        <tr>
+          <td>route 4</td>
+          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
+          <td> <div class="text-center mx-0">
+              <a href="#" class="btn bg-secondary text-light">詳細</a>
+            </div> </td>
+        </tr>
+      </tbody>
+    </table>
+

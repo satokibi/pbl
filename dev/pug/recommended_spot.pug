@@ -1,0 +1,30 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "recommended_spot"
+  - var page = pages[key]
+
+block contents
+  .container
+    h2.mt-5.mb-4 人気スポットランキング
+
+    table.table
+      thead
+        tr
+          th #
+          th 写真
+          th スポット名
+          th 住所
+          th おすすめ件数
+          th  
+      tbody.items
+        - for( var i = 0; i < 3; i++ )
+          tr
+            td.align-middle #{i+1}
+            td.w-25: img( src=image_path+"/sample.jpg" width="160")
+            td.align-middle spot name #{i}
+            td.align-middle spot address #{i}
+            td.align-middle ☆100件
+            td.align-middle: .text-center.mx-0
+              a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細

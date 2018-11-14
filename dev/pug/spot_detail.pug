@@ -1,0 +1,42 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "spot_detail"
+  - var page = pages[key]
+
+block contents
+  .container
+
+    .clearfix.mt-5.mb-2 
+      h3.float-left スポット詳細
+      p.float-left.ml-4.mt-2 ☆ 30 件
+
+      .float-right.mr-4
+        button.btn twitter
+        button.btn line
+        button.btn face 
+        button.btn insta
+
+    .clearfix.border.p-2
+      .w-25.pt-2.float-left
+        img.border( src=image_path+"/sample.jpg" width="100%" )
+        div
+          p.text-center.spot-name-kana.mb-0.mt-3 すぽっとめい
+          h3.text-center.font-weight-bold.border-bottom.pb-2 スポット名
+        .mx-auto.p-2.border-bottom
+          p.font-weight-bold.mt-2 イベント
+          p.pl-2.m-0 ○○まつり
+          p.pl-2.m-0.mb-1 １月、２月
+        .mx-auto.p-2
+          p.font-weight-bold.mt-2 最寄り駅
+          p.pl-2.m-0 ○○駅
+        div.text-center.pt-3.pb-1
+          a.btn.bg-secondary.text-light( href="" ) マイルートに追加する
+      .w-75.p-2.pl-5.float-left
+        #map
+        p.p-2.mt-3 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文 スポットの紹介文
+
+  script.
+    initMap();
+

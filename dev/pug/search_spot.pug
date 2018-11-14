@@ -1,0 +1,67 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "search_spot"
+  - var page = pages[key]
+
+block contents
+  .container
+    h5.my-2 もう一度検索する 
+    .row
+      .col-8.mx-auto
+        form.form-group.row
+          label.col-form-label キーワード検索
+          .input-group
+            input.form-control( type="text" placeholder="" )
+            .input-group-append
+              a.btn.btn-success.text-white( href=pages.search_spot.url ) 検索
+
+    .clearfix.mt-4
+      .btn-group.float-right( role="group" aria-label="Basic example" )
+        button.btn.btn-secondary( type="button" ) リスト
+        button.btn.btn-secondary( type="button" ) ブロック
+        button.btn.btn-secondary( type="button" ) マップ
+
+    .mb-2.mt-4
+      .clearfix
+        h3.float-left.ml-2 検索結果
+        p.float-left.ml-4.mt-2 全30件
+
+        .dropdown.mr-4.float-right 並び替え:
+          button.btn.btn-default.dropdown-toggle( type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ) いいね順
+            span.caret
+          ul.dropdown-menu( aria-labelledby="dropdownMenu1" )
+            a.dropdown-item( href="#" ) いいね順
+            a.dropdown-item( href="#" ) 名前順
+
+    table.table
+      thead
+        tr
+          th 写真
+          th スポット名
+          th 住所
+          th おすすめ件数
+          th  
+      tbody.items
+        - for( var i = 0; i < 7; i++ )
+          tr
+            td.w-25: img( src=image_path+"/sample.jpg" width="160")
+            td.align-middle spot name #{i}
+            td.align-middle spot address #{i}
+            td.align-middle ☆ #{i*10} 件
+            td.align-middle: .text-center.mx-0
+              a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+
+    .row
+      - for( var i = 0; i < 8; i++ )
+        .p-2.col-xs-12.col-md-4.col-lg-3
+          .border
+            h4.p-2 spot name #{i}
+            .clearfix
+              div.w-75.float-left.p-2
+                img( src=image_path+"/sample.jpg", width="100%" )
+              div.w-25.float-left.text-left
+                button.mt-2.btn.p-2 追加
+                p.mt-5 ☆#{i*10}件
+

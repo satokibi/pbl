@@ -1,0 +1,60 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "search"
+  - var page = pages[key]
+
+block contents
+  .jumbotron
+    h1.display-3 筑後川クロスロード
+    p.lead 筑後川流域周辺の人気スポットや、知る人ぞ知る名所をご紹介！
+    hr.my-2
+    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+
+  .container
+    .row.mb-4
+      .col-8.mx-auto
+        form.form-group.row
+          label.col-form-label キーワード検索
+          .input-group
+            input.form-control( type="text" placeholder="" )
+            .input-group-append
+              a.btn.btn-success.text-white( href=pages.search_spot.url ) 検索
+
+    h4.my-3 おすすめルート
+    table.table
+      thead
+        tr
+          th おすすめルート名
+          th 説明
+          th 
+      tbody.items
+        - for( var i = 0; i < 3; i++ )
+          tr
+            td route #{i}
+            td 説明説明説明説明説明説明説明説明説明説明説明説明
+            td: .text-center.mx-0
+              a.btn.bg-secondary.text-light( href=pages.recommended_route_detail.url ) 詳細
+
+
+    h4.mt-5.mb-4 人気スポットランキング
+    table.table
+      thead
+        tr
+          th #
+          th 写真
+          th スポット名
+          th 住所
+          th おすすめ件数
+          th  
+      tbody.items
+        - for( var i = 0; i < 3; i++ )
+          tr
+            td.align-middle #{i+1}
+            td.w-25: img( src=image_path+"/sample.jpg" width="160")
+            td.align-middle spot name #{i}
+            td.align-middle spot address #{i}
+            td.align-middle ☆100件
+            td.align-middle: .text-center.mx-0
+              a.btn.bg-secondary.text-light( href=pages.recommended_route_detail.url ) 詳細

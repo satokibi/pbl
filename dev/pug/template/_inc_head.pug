@@ -1,0 +1,16 @@
+meta( charset="utf-8" )
+link( href=css_path+"/style.css", rel="stylesheet" )
+
+if key == 'spot_detail'
+  link( href=css_path+"/spot_detail.css", media="screen", rel="stylesheet" )
+else
+  link( href=css_path+"/map.css", media="screen", rel="stylesheet" )
+
+script( type="text/javascript", src=js_path+"/google.js" )
+
+title #{page.title}
+
+.
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4xfQu0EN4YnllX-BV2SqcbqL5ev4Vyls"></script>

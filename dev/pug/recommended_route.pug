@@ -6,45 +6,18 @@ block vars
   - var page = pages[key]
 
 block contents
-  .container.
-    <h2 class="my-3">おすすめルート一覧</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>おすすめルート名</th>
-          <th>説明</th>
-          <th><!-- button --></th>
-        </tr>
-      </thead>
-      <tbody class="items">
-        <tr>
-          <td>route 1</td>
-          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
-          <td> <div class="text-center mx-0">
-              <a href="#" class="btn bg-secondary text-light">詳細</a>
-            </div> </td>
-        </tr>
-        <tr>
-          <td>route 2</td>
-          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
-          <td> <div class="text-center mx-0">
-              <a href="#" class="btn bg-secondary text-light">詳細</a>
-            </div> </td>
-        </tr>
-        <tr>
-          <td>route 3</td>
-          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
-          <td> <div class="text-center mx-0">
-              <a href="#" class="btn bg-secondary text-light">詳細</a>
-            </div> </td>
-        </tr>
-        <tr>
-          <td>route 4</td>
-          <td>説明説明説明説明説明説明説明説明説明説明説明説明説明説明</td>
-          <td> <div class="text-center mx-0">
-              <a href="#" class="btn bg-secondary text-light">詳細</a>
-            </div> </td>
-        </tr>
-      </tbody>
-    </table>
-
+  .container
+    h2.mt-5.mb-4 おすすめルート一覧
+    table.table
+      thead
+        tr
+          th おすすめルート名
+          th 説明
+          th 
+      tbody.items
+        - for( var i = 0; i < 7; i++ )
+          tr
+            td route #{i}
+            td 説明説明説明説明説明説明説明説明説明説明説明説明
+            td: .text-center.mx-0
+              a.btn.bg-secondary.text-light( href=pages.recommended_route_detail.url ) 詳細

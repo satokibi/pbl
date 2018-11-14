@@ -5,11 +5,11 @@
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/map.css" media="screen" rel="stylesheet">
     <script type="text/javascript" src="./js/google.js"></script>
-    <title>トップページ</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>マイルート詳細</title><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4xfQu0EN4YnllX-BV2SqcbqL5ev4Vyls"></script>
   </head>
-  <body class="index">
+  <body class="myroute_detail">
     <header>
       <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container">
@@ -29,13 +29,53 @@
         </div>
       </nav>
     </header>
-    <div class="jumbotron">
-      <h1 class="display-3">筑後川クロスロード</h1>
-      <p class="lead">筑後川流域周辺の人気スポットや、知る人ぞ知る名所をご紹介！</p>
-      <hr class="my-2">
-      <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <div class="container">
+      <h2 class="mt-5 mb-4">マイルート</h2>
+      <p>追加したスポットリスト</p>
+      <table class="table table-hover active">
+        <thead>
+          <tr>
+            <th>スポット名</th>
+            <th>住所</th>
+            <th>hoge</th>
+            <th>hoge</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>my spot 0</td>
+            <td>address 0</td>
+            <td>hoge</td>
+            <td>hoge</td>
+            <td>
+              <div class="text-center"><a class="btn bg-secondary text-light" href="spot_detail.html">詳細</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>my spot 1</td>
+            <td>address 1</td>
+            <td>hoge</td>
+            <td>hoge</td>
+            <td>
+              <div class="text-center"><a class="btn bg-secondary text-light" href="spot_detail.html">詳細</a></div>
+            </td>
+          </tr>
+          <tr>
+            <td>my spot 2</td>
+            <td>address 2</td>
+            <td>hoge</td>
+            <td>hoge</td>
+            <td>
+              <div class="text-center"><a class="btn bg-secondary text-light" href="spot_detail.html">詳細</a></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mb-1 text-right"><a class="btn bg-secondary text-white mr-2" href="myroute_edit.html">編集する</a><a class="btn bg-primary text-white" href="">保存する</a></div>
+      <div id="map"></div>
+      <script>create_route();</script>
     </div>
-    <div class="container"></div>
     <footer class="bg-light text-center text-muted py-4 mt-4">
       <p>Copyright YYYY crossroad</p>
     </footer><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

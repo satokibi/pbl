@@ -1,0 +1,36 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "myroute_detail"
+  - var page = pages[key]
+
+block contents
+  
+  .container
+    h2.mt-5.mb-4 マイルート
+    p 追加したスポットリスト
+    table.table.table-hover.active
+      thead
+        tr
+          th スポット名
+          th 住所
+          th hoge
+          th hoge
+          th 
+      tbody
+        - for( var i = 0; i < 3; i++ )
+          tr
+            td my spot #{i}
+            td address #{i}
+            td hoge
+            td hoge
+            td: .text-center
+              a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+    .mb-1.text-right
+      a.btn.bg-secondary.text-white.mr-2( href=pages.myroute_edit.url ) 編集する
+      a.btn.bg-primary.text-white( href="" ) 保存する
+    #map
+
+    script.
+      create_route();

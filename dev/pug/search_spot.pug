@@ -19,14 +19,14 @@ block contents
 
     .clearfix.mt-4
       .btn-group.float-right( role="group" aria-label="Basic example" )
-        button.btn.btn-secondary( type="button" ) リスト
-        button.btn.btn-secondary( type="button" ) ブロック
-        button.btn.btn-secondary( type="button" ) マップ
+        button#change-list.btn.btn-secondary( type="button" ) リスト
+        button#change-block.btn.btn-secondary( type="button" ) ブロック
+        button#change-map.btn.btn-secondary( type="button" ) マップ
 
     .mb-2.mt-4
       .clearfix
         h3.float-left.ml-2 検索結果
-        p.float-left.ml-4.mt-2 全30件
+        p.float-left.ml-4.mt-2 全7件
 
         .dropdown.mr-4.float-right 並び替え:
           button.btn.btn-default.dropdown-toggle( type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ) いいね順
@@ -35,33 +35,41 @@ block contents
             a.dropdown-item( href="#" ) いいね順
             a.dropdown-item( href="#" ) 名前順
 
-    table.table
-      thead
-        tr
-          th 写真
-          th スポット名
-          th 住所
-          th おすすめ件数
-          th  
-      tbody.items
-        - for( var i = 0; i < 7; i++ )
+    #display-list
+      table.table
+        thead
           tr
-            td.w-25: img( src=image_path+"/sample.jpg" width="160")
-            td.align-middle spot name #{i}
-            td.align-middle spot address #{i}
-            td.align-middle ☆ #{i*10} 件
-            td.align-middle: .text-center.mx-0
-              a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+            th 写真
+            th スポット名
+            th 住所
+            th おすすめ件数
+            th  
+        tbody.items
+          - for( var i = 0; i < 7; i++ )
+            tr
+              td.w-25: img( src=image_path+"/sample.jpg" width="160")
+              td.align-middle spot name #{i}
+              td.align-middle spot address #{i}
+              td.align-middle ☆ #{i*10} 件
+              td.align-middle: .text-center.mx-0
+                a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
 
-    .row
-      - for( var i = 0; i < 8; i++ )
-        .p-2.col-xs-12.col-md-4.col-lg-3
-          .border
-            h4.p-2 spot name #{i}
-            .clearfix
-              div.w-75.float-left.p-2
-                img( src=image_path+"/sample.jpg", width="100%" )
-              div.w-25.float-left.text-left
-                button.mt-2.btn.p-2 追加
-                p.mt-5 ☆#{i*10}件
+    #display-block
+      .row
+        - for( var i = 0; i < 7; i++ )
+          .p-2.col-xs-12.col-md-4.col-lg-3
+            .border
+              h4.p-2 spot name #{i}
+              .clearfix
+                div.w-75.float-left.p-2
+                  img( src=image_path+"/sample.jpg", width="100%" )
+                div.w-25.float-left.text-left
+                  button.mt-2.btn.p-2 追加
+                  p.mt-5 ☆#{i*10}件
+
+    #display-map
+      #map
+
+  script.
+    create_marker();
 

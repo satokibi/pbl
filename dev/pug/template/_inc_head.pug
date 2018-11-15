@@ -6,9 +6,12 @@ if key == 'spot_detail'
 else
   link( href=css_path+"/map.css", media="screen", rel="stylesheet" )
 
+if key == 'search_spot'
+  script( type="text/javascript", src=js_path+"/search_spot.js" )
+
 script( type="text/javascript", src=js_path+"/google.js" )
 
-title #{page.title}
+title 筑後川クロスロード | #{page.title}
 
 .
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

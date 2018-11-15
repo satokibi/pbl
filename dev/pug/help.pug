@@ -1,0 +1,10 @@
+extends _layout.pug
+
+block vars
+  include _config.pug
+  - var key = "help"
+  - var page = pages[key]
+
+block contents
+  .container
+    h2.mt-5.mb-4 ヘルプページ

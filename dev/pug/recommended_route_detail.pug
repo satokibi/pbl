@@ -10,23 +10,25 @@ block contents
     h2.my-3 ルート案名
     p ここにルートの説明がある。 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明
     p.mt-4 スポットリスト
-    table.table.table-hover.active
+
+    table.table
       thead
         tr
+          th 写真
           th スポット名
           th 住所
-          th hoge
-          th hoge
-          th 
-      tbody
-      - for( var i = 0; i < 3; i++ )
-        tr
-          td spot name #{i}
-          td address #{i}
-          td hoge
-          td hoge
-          td: .text-center.mx-0
-            a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+          th おすすめ件数
+          th  
+      tbody.items
+        - for( var i = 0; i < 3; i++ )
+          tr
+            td.w-25: img( src=image_path+"/sample.jpg" width="160")
+            td.align-middle spot name #{i}
+            td.align-middle spot address #{i}
+            td.align-middle ☆ #{i*10} 件
+            td.align-middle: .text-center.mx-0
+              a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+
     .mb-1.text-right
       a.btn.bg-secondary.text-light( href=pages.myroute_edit.url ) マイルートに追加して編集する
 

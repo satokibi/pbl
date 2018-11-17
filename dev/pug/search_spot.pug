@@ -47,25 +47,29 @@ block contents
         tbody.items
           - for( var i = 0; i < 7; i++ )
             tr
-              td.w-25: img( src=image_path+"/sample.jpg" width="160")
-              td.align-middle spot name #{i}
-              td.align-middle spot address #{i}
+              td.w-25: a( href=pages.spot_detail.url )
+                img( src=image_path+"/sample.jpg" width="160")
+              td.align-middle: a.text-dark( href=pages.spot_detail.url ) スポット名 #{i}
+              td.align-middle スポットの住所 #{i}
               td.align-middle ☆ #{i*10} 件
               td.align-middle: .text-center.mx-0
-                a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+                a.btn.bg-secondary.text-light( ) マイルートに追加
+                a.btn.bg-secondary.text-light.ml-2( href=pages.spot_detail.url ) 詳細
 
     #display-block
       .row
         - for( var i = 0; i < 7; i++ )
           .p-2.col-xs-12.col-md-4.col-lg-3
             .border
-              h4.p-2 spot name #{i}
+              a.text-dark( href=pages.spot_detail.url )
+                h4.p-2 スポット名 #{i}
               .clearfix
                 div.w-75.float-left.p-2
-                  img( src=image_path+"/sample.jpg", width="100%" )
+                  a( href=pages.spot_detail.url )
+                    img( src=image_path+"/sample.jpg", width="100%" )
                 div.w-25.float-left.text-left
                   button.mt-2.btn.p-2 追加
-                  p.mt-5 ☆#{i*10}件
+                  p.mt-4 ☆#{i*10}件
 
     #display-map
       #map

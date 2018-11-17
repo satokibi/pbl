@@ -8,8 +8,8 @@ block vars
 block contents
   .container
     h2.my-3 ルート案名
-    p ここにルートの説明がある。 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明 説明
-    p.mt-4 スポットリスト
+    p ルートの説明
+    p.mt-4.mb-2 スポットリスト
 
     table.table
       thead
@@ -22,12 +22,14 @@ block contents
       tbody.items
         - for( var i = 0; i < 3; i++ )
           tr
-            td.w-25: img( src=image_path+"/sample.jpg" width="160")
-            td.align-middle spot name #{i}
-            td.align-middle spot address #{i}
+            td.w-25: a( href=pages.spot_detail.url )
+              img( src=image_path+"/sample.jpg" width="160")
+            td.align-middle: a.text-dark( href=pages.spot_detail.url ) スポット名 #{i}
+            td.align-middle スポットの住所 #{i}
             td.align-middle ☆ #{i*10} 件
             td.align-middle: .text-center.mx-0
-              a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+              a.btn.bg-secondary.text-light.ml-2( href=pages.spot_detail.url ) 詳細
+
 
     .mb-1.text-right
       a.btn.bg-secondary.text-light( href=pages.myroute_edit.url ) マイルートに追加して編集する

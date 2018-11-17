@@ -10,23 +10,26 @@ block contents
   .container
     h2.mt-5.mb-4 マイルート
     p 追加したスポットリスト
+
     table.table.table-hover.active
       thead
         tr
+          th 写真
           th スポット名
           th 住所
-          th hoge
-          th hoge
-          th 
-      tbody
+          th おすすめ件数
+          th  
+      tbody.items
         - for( var i = 0; i < 3; i++ )
           tr
-            td my spot #{i}
-            td address #{i}
-            td hoge
-            td hoge
-            td: .text-center
+            td.w-25: a( href=pages.spot_detail.url )
+              img( src=image_path+"/sample.jpg" width="160")
+            td.align-middle: a.text-dark( href=pages.spot_detail.url ) スポット名 #{i}
+            td.align-middle スポットの住所 #{i}
+            td.align-middle ☆ #{i*10} 件
+            td.align-middle: .text-center.mx-0
               a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細
+
     .mb-1.text-right
       a.btn.bg-secondary.text-white.mr-2( href=pages.myroute_edit.url ) 編集する
       a.btn.bg-primary.text-white( href="" ) 保存する

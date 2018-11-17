@@ -8,20 +8,43 @@ block vars
 block contents
   .jumbotron
     h1.display-3 筑後川クロスロード
-    p.lead 筑後川流域周辺の人気スポットや、知る人ぞ知る名所をご紹介！
     hr.my-2
-    p 背景に写真?
-    p テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    p.lead 筑後川流域周辺の人気スポットや、知る人ぞ知る名所をご紹介！
 
   .container
+
     .row.mb-4
       .col-8.mx-auto
-        form.form-group.row
-          label.col-form-label キーワード検索
+        h5.font-weight-normal キーワード検索
+        form.form-group.row.px-3.py-2
+          // label.col-form-label キーワード検索
           .input-group
             input.form-control( type="text" placeholder="" )
             .input-group-append
               a.btn.btn-success.text-white( href=pages.search_spot.url ) 検索
+
+
+          .dropdown.ml-4.mt-1
+            label カテゴリ別検索: 
+            button.btn.btn-secondary.dropdown-toggle( type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false" ) ----
+            .dropdown-menu( aria-labelledby="dropdownMenu1" )
+              a.dropdown-item( href="#" ) 歴史
+              a.dropdown-item( href="#" ) 歴史
+              a.dropdown-item( href="#" ) 歴史
+
+          .dropright.ml-4.mt-1
+            label イベント開催月: 
+            button.btn.btn-secondary.dropdown-toggle( type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false" ) ----
+            .dropdown-menu( aria-labelledby="dropdownMenu1" )
+              - for( var i = 1; i < 13; i++ )
+                a.dropdown-item( href="#" ) #{i}月 
+        // 
+          label イベント開催月: 
+            - for( var i = 1; i < 13; i++ )
+              .form-check.form-check-inline
+                input.form-check-input( type="checkbox" value="" )
+                label.form-check-label( for="" ) #{i}月
+
 
     h4.my-3 おすすめルート
     table.table
@@ -33,8 +56,8 @@ block contents
       tbody.items
         - for( var i = 0; i < 3; i++ )
           tr
-            td route #{i}
-            td 説明説明説明説明説明説明説明説明説明説明説明説明
+            td ルート名 #{i}
+            td ルート名の説明
             td: .text-center.mx-0
               a.btn.bg-secondary.text-light( href=pages.recommended_route_detail.url ) 詳細
 
@@ -54,8 +77,8 @@ block contents
           tr
             td.align-middle #{i+1}
             td.w-25: img( src=image_path+"/sample.jpg" width="160")
-            td.align-middle spot name #{i}
-            td.align-middle spot address #{i}
-            td.align-middle ☆100件
+            td.align-middle スポット名 #{i}
+            td.align-middle スポットの住所 #{i}
+            td.align-middle ☆#{100-i}件
             td.align-middle: .text-center.mx-0
               a.btn.bg-secondary.text-light( href=pages.spot_detail.url ) 詳細

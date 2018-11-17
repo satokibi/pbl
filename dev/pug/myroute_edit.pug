@@ -13,22 +13,24 @@ block contents
       a.btn.btn-lg.bg-primary.text-white( href=pages.myroute_detail.url ) 確定する
 
     p スポットリスト
+
     table.table.table-hover.active
       thead
         tr
+          th 写真
           th スポット名
           th 住所
-          th hoge
-          th hoge
-          th 
-      tbody
+          th おすすめ件数
+          th  
+      tbody.items
         - for( var i = 0; i < 3; i++ )
           tr
-            td my spot #{i}
-            td address #{i}
-            td hoge
-            td hoge
-            td: .text-center
+            td.w-25: a( href=pages.spot_detail.url )
+              img( src=image_path+"/sample.jpg" width="160")
+            td.align-middle: a.text-dark( href=pages.spot_detail.url ) スポット名 #{i}
+            td.align-middle スポットの住所 #{i}
+            td.align-middle ☆ #{i*10} 件
+            td.align-middle: .text-center
               a.btn.bg-secondary.text-light.btn-sm.mr-2( href=pages.spot_detail.url ) 詳細
               a.btn.bg-danger.text-light.btn-sm( href="" ) 削除
 

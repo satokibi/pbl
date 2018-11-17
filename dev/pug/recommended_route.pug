@@ -17,7 +17,7 @@ block contents
       tbody.items
         - for( var i = 0; i < 7; i++ )
           tr
-            td route #{i}
-            td 説明説明説明説明説明説明説明説明説明説明説明説明
+            td: a.text-dark( href=pages.recommended_route_detail.url ) ルート名 #{i}
+            td ルートの説明
             td: .text-center.mx-0
               a.btn.bg-secondary.text-light( href=pages.recommended_route_detail.url ) 詳細

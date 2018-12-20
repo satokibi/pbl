@@ -7,16 +7,33 @@ block vars
 
 block contents
   .container
-    h5.my-2 もう一度検索する 
-    .row
+    h5.my-3 もう一度検索する 
+
+    .row.mb-4
       .col-8.mx-auto
-        form.form-group.row
-          label.col-form-label キーワード検索
+        h5.font-weight-normal キーワード検索
+        form.form-group.row.px-3.py-2
+          // label.col-form-label キーワード検索
           .input-group
             input.form-control( type="text" placeholder="" )
             .input-group-append
               a.btn.btn-success.text-white( href=pages.search_spot.url ) 検索
 
+
+          .dropdown.ml-4.mt-1
+            label カテゴリ別検索: 
+            button.btn.btn-secondary.dropdown-toggle( type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false" ) ----
+            .dropdown-menu( aria-labelledby="dropdownMenu1" )
+              a.dropdown-item( href="#" ) 歴史
+              a.dropdown-item( href="#" ) 歴史
+              a.dropdown-item( href="#" ) 歴史
+
+          .dropright.ml-4.mt-1
+            label イベント開催月: 
+            button.btn.btn-secondary.dropdown-toggle( type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false" ) ----
+            .dropdown-menu( aria-labelledby="dropdownMenu1" )
+              - for( var i = 1; i < 13; i++ )
+                a.dropdown-item( href="#" ) #{i}月 
     .clearfix.mt-4
       .btn-group.float-right( role="group" aria-label="Basic example" )
         button#change-list.btn.btn-secondary( type="button" ) リスト
